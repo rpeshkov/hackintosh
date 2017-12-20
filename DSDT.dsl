@@ -9054,6 +9054,15 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                     }
                 }
             }
+            Method (_DSM, 4, NotSerialized)
+            {
+                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                Return (Package()
+                {
+                    "AAPL,snb-platform-id", Buffer() { 0x00, 0x00, 0x01, 0x00 },
+                    "hda-gfx", Buffer() { "onboard-1" },
+                })
+            }
         }
     }
 
