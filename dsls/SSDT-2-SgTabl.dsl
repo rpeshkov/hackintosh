@@ -20,38 +20,38 @@
  */
 DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 {
-    External (_SB_.PCI0.GFX0, DeviceObj)
-    External (_SB_.PCI0.GFX0._DOD, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD01._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD01._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._BCL, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GFX0.DD02._BQC, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._DCS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD02._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD03._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD03._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD04._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD04._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD05._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD05._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD06._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD06._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD07._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD07._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD08._ADR, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DD08._DGS, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.DDL2, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DDL3, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DDL4, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DDL5, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DDL6, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DDL7, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DDL8, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DIDL, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.HDSM, MethodObj)    // 4 Arguments
-    External (_SB_.PCI0.GFX0.SDDL, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.IGPU, DeviceObj)
+    External (_SB_.PCI0.IGPU._DOD, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD01._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD01._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._BCL, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._BCM, MethodObj)    // 1 Arguments
+    External (_SB_.PCI0.IGPU.DD02._BQC, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._DCS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD02._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD03._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD03._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD04._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD04._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD05._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD05._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD06._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD06._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD07._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD07._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD08._ADR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DD08._DGS, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.DDL2, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DDL3, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DDL4, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DDL5, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DDL6, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DDL7, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DDL8, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.DIDL, FieldUnitObj)
+    External (_SB_.PCI0.IGPU.HDSM, MethodObj)    // 4 Arguments
+    External (_SB_.PCI0.IGPU.SDDL, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.PEG0, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP, DeviceObj)
     External (_SB_.PCI0.PEG0.PEGP._ADR, IntObj)
@@ -82,7 +82,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
     External (SGMD, FieldUnitObj)
     External (XBAS, FieldUnitObj)
 
-    Scope (\_SB.PCI0.GFX0)
+    Scope (\_SB.PCI0.IGPU)
     {
         Method (MXVL, 1, Serialized)
         {
@@ -244,9 +244,9 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
                 }
             }
 
-            If (CondRefOf (\_SB.PCI0.GFX0.HDSM))
+            If (CondRefOf (\_SB.PCI0.IGPU.HDSM))
             {
-                Return (\_SB.PCI0.GFX0.HDSM (Arg0, Arg1, Arg2, Arg3))
+                Return (\_SB.PCI0.IGPU.HDSM (Arg0, Arg1, Arg2, Arg3))
             }
 
             Return (One)
@@ -569,14 +569,14 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
         Method (_DOD, 0, NotSerialized)  // _DOD: Display Output Devices
         {
-            Return (\_SB.PCI0.GFX0._DOD ())
+            Return (\_SB.PCI0.IGPU._DOD ())
         }
 
         Device (DD01)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD01._ADR ())
+                Return (\_SB.PCI0.IGPU.DD01._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -585,7 +585,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD01._DGS ())
+                Return (\_SB.PCI0.IGPU.DD01._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -597,17 +597,17 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD02._ADR ())
+                Return (\_SB.PCI0.IGPU.DD02._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
             {
-                Return (\_SB.PCI0.GFX0.DD02._DCS ())
+                Return (\_SB.PCI0.IGPU.DD02._DCS ())
             }
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD02._DGS ())
+                Return (\_SB.PCI0.IGPU.DD02._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -616,17 +616,17 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_BCL, 0, NotSerialized)  // _BCL: Brightness Control Levels
             {
-                Return (\_SB.PCI0.GFX0.DD02._BCL ())
+                Return (\_SB.PCI0.IGPU.DD02._BCL ())
             }
 
             Method (_BQC, 0, NotSerialized)  // _BQC: Brightness Query Current
             {
-                Return (\_SB.PCI0.GFX0.DD02._BQC ())
+                Return (\_SB.PCI0.IGPU.DD02._BQC ())
             }
 
             Method (_BCM, 1, NotSerialized)  // _BCM: Brightness Control Method
             {
-                Return (\_SB.PCI0.GFX0.DD02._BCM (Arg0))
+                Return (\_SB.PCI0.IGPU.DD02._BCM (Arg0))
             }
         }
 
@@ -634,7 +634,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD03._ADR ())
+                Return (\_SB.PCI0.IGPU.DD03._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -643,7 +643,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD03._DGS ())
+                Return (\_SB.PCI0.IGPU.DD03._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -655,7 +655,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD04._ADR ())
+                Return (\_SB.PCI0.IGPU.DD04._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -664,7 +664,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD04._DGS ())
+                Return (\_SB.PCI0.IGPU.DD04._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -676,7 +676,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD05._ADR ())
+                Return (\_SB.PCI0.IGPU.DD05._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -685,7 +685,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD05._DGS ())
+                Return (\_SB.PCI0.IGPU.DD05._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -697,7 +697,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD06._ADR ())
+                Return (\_SB.PCI0.IGPU.DD06._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -706,7 +706,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD06._DGS ())
+                Return (\_SB.PCI0.IGPU.DD06._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -718,7 +718,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD07._ADR ())
+                Return (\_SB.PCI0.IGPU.DD07._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -727,7 +727,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD07._DGS ())
+                Return (\_SB.PCI0.IGPU.DD07._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State
@@ -739,7 +739,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
         {
             Method (_ADR, 0, Serialized)  // _ADR: Address
             {
-                Return (\_SB.PCI0.GFX0.DD08._ADR ())
+                Return (\_SB.PCI0.IGPU.DD08._ADR ())
             }
 
             Method (_DCS, 0, NotSerialized)  // _DCS: Display Current Status
@@ -748,7 +748,7 @@ DefinitionBlock ("", "SSDT", 1, "SgRef", "SgTabl", 0x00001000)
 
             Method (_DGS, 0, NotSerialized)  // _DGS: Display Graphics State
             {
-                Return (\_SB.PCI0.GFX0.DD08._DGS ())
+                Return (\_SB.PCI0.IGPU.DD08._DGS ())
             }
 
             Method (_DSS, 1, NotSerialized)  // _DSS: Device Set State

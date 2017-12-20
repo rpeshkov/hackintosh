@@ -40,8 +40,8 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
      * because the disassembler had to guess at the number of arguments
      * required for each:
      */
-    External (_SB_.PCI0.GFX0.HWID, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.GFX0.IDAB, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.HWID, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.IGPU.IDAB, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.IEIT.EITV, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (_SB_.PCI0.PEG0.PEGP.LCD_, UnknownObj)    // Warning: Unknown object
     External (CFGD, IntObj)
@@ -3473,10 +3473,10 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                     {
                         If (LAnd (LEqual (Arg0, 0x03), LEqual (Arg1, 0x01)))
                         {
-                            Store (0x03, \_SB.PCI0.GFX0.CLID)
+                            Store (0x03, \_SB.PCI0.IGPU.CLID)
                             Store (ACEX, \PWRS)
                             Store (ACEX, \SPWR)
-                            Store (DCBE, \_SB.PCI0.GFX0.CDCK)
+                            Store (DCBE, \_SB.PCI0.IGPU.CDCK)
                             If (LEqual (ECON, 0x01))
                             {
                                 If (LOr (LEqual (And (\TRBO, 0x80), 0x80), LNotEqual (TIST, 0x01)))
@@ -3546,9 +3546,9 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                         Store (LSTE, LIDS)
                         If (IGDS)
                         {
-                            If (\_SB.PCI0.GFX0.GLID (LIDS))
+                            If (\_SB.PCI0.IGPU.GLID (LIDS))
                             {
-                                Or (0x80000000, \_SB.PCI0.GFX0.CLID, \_SB.PCI0.GFX0.CLID)
+                                Or (0x80000000, \_SB.PCI0.IGPU.CLID, \_SB.PCI0.IGPU.CLID)
                             }
                         }
 
@@ -3561,9 +3561,9 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                         Store (LSTE, \LIDS)
                         If (IGDS)
                         {
-                            If (\_SB.PCI0.GFX0.GLID (LIDS))
+                            If (\_SB.PCI0.IGPU.GLID (LIDS))
                             {
-                                Or (0x80000000, \_SB.PCI0.GFX0.CLID, \_SB.PCI0.GFX0.CLID)
+                                Or (0x80000000, \_SB.PCI0.IGPU.CLID, \_SB.PCI0.IGPU.CLID)
                             }
                         }
 
@@ -3591,7 +3591,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                         P8XH (0x00, 0x63)
                         If (LGreaterEqual (\OSYS, 0x07DC))
                         {
-                            If (LNot (\_SB.PCI0.GFX0.PDRD ()))
+                            If (LNot (\_SB.PCI0.IGPU.PDRD ()))
                             {
                                 BRTN (0x87)
                             }
@@ -3607,7 +3607,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                         P8XH (0x00, 0x64)
                         If (LGreaterEqual (\OSYS, 0x07DC))
                         {
-                            If (LNot (\_SB.PCI0.GFX0.PDRD ()))
+                            If (LNot (\_SB.PCI0.IGPU.PDRD ()))
                             {
                                 BRTN (0x86)
                             }
@@ -7163,9 +7163,9 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                     Store (\_SB.PCI0.LPCB.H_EC.LSTE, LIDS)
                     If (IGDS)
                     {
-                        If (\_SB.PCI0.GFX0.GLID (LIDS))
+                        If (\_SB.PCI0.IGPU.GLID (LIDS))
                         {
-                            Or (0x80000000, \_SB.PCI0.GFX0.CLID, \_SB.PCI0.GFX0.CLID)
+                            Or (0x80000000, \_SB.PCI0.IGPU.CLID, \_SB.PCI0.IGPU.CLID)
                         }
                     }
 
@@ -7633,7 +7633,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
 
     Scope (\_SB.PCI0)
     {
-        Device (GFX0)
+        Device (IGPU)
         {
             Name (_ADR, 0x00020000)  // _ADR: Address
             Method (PCPC, 0, NotSerialized)
@@ -7956,7 +7956,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                     P8XH (0x00, Arg0)
                     If (LAnd (LGreaterEqual (Arg0, 0x00), LLessEqual (Arg0, 0x64)))
                     {
-                        \_SB.PCI0.GFX0.AINT (0x01, Arg0)
+                        \_SB.PCI0.IGPU.AINT (0x01, Arg0)
                         Store (Arg0, BRTL)
                         If (LEqual (Arg0, LBR1))
                         {
@@ -8875,7 +8875,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                     }
                     Else
                     {
-                        Notify (\_SB.PCI0.GFX0, Arg1)
+                        Notify (\_SB.PCI0.IGPU, Arg1)
                     }
                 }
 
@@ -8885,7 +8885,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                 }
                 Else
                 {
-                    Notify (\_SB.PCI0.GFX0, 0x80)
+                    Notify (\_SB.PCI0.IGPU, 0x80)
                 }
 
                 Return (0x00)
@@ -9621,42 +9621,42 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
     {
         If (LEqual (And (DID1, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD01, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD01, Arg0)
         }
 
         If (LEqual (And (DID2, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD02, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD02, Arg0)
         }
 
         If (LEqual (And (DID3, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD03, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD03, Arg0)
         }
 
         If (LEqual (And (DID4, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD04, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD04, Arg0)
         }
 
         If (LEqual (And (DID5, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD05, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD05, Arg0)
         }
 
         If (LEqual (And (DID6, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD06, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD06, Arg0)
         }
 
         If (LEqual (And (DID7, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD07, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD07, Arg0)
         }
 
         If (LEqual (And (DID8, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD08, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD08, Arg0)
         }
     }
 
@@ -9700,9 +9700,9 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
 
         Method (_L06, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
+            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
             {
-                \_SB.PCI0.GFX0.GSCI ()
+                \_SB.PCI0.IGPU.GSCI ()
             }
         }
 
@@ -9713,9 +9713,9 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                 Store (\_SB.PCI0.LPCB.H_EC.LSTE, LIDS)
                 If (IGDS)
                 {
-                    If (\_SB.PCI0.GFX0.GLID (LIDS))
+                    If (\_SB.PCI0.IGPU.GLID (LIDS))
                     {
-                        Or (0x80000000, \_SB.PCI0.GFX0.CLID, \_SB.PCI0.GFX0.CLID)
+                        Or (0x80000000, \_SB.PCI0.IGPU.CLID, \_SB.PCI0.IGPU.CLID)
                     }
                 }
 
@@ -9731,7 +9731,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
             If (LAnd (IGDS, LEqual (And (0x04, DSEN), 0x00)))
             {
                 Store (BRTL, Local0)
-                Store (\_SB.PCI0.GFX0.CBLV, BRTL)
+                Store (\_SB.PCI0.IGPU.CBLV, BRTL)
                 And (Add (BRTL, 0x01), 0xFE, BRTL)
                 If (LEqual (Local0, 0x86))
                 {
@@ -9745,7 +9745,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                     Subtract (BRTL, 0x0A, BRTL)
                 }
 
-                \_SB.PCI0.GFX0.AINT (0x01, BRTL)
+                \_SB.PCI0.IGPU.AINT (0x01, BRTL)
             }
             Else
             {
