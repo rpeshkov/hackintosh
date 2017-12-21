@@ -4816,7 +4816,7 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                             0x0070,             // Range Minimum
                             0x0070,             // Range Maximum
                             0x01,               // Alignment
-                            0x08,               // Length
+                            0x02,               // Length
                             )
                         IRQNoFlags ()
                             {8}
@@ -5386,6 +5386,21 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                     Or (HCON, 0x02, HCON)
                     Or (HSTS, 0xFF, HSTS)
                 }
+                Device (BUS0)
+                {
+                    Name (_CID, "smbus")
+                    Name (_ADR, Zero)
+                    Device (DVL0)
+                    {
+                        Name (_ADR, 0x57)
+                        Name (_CID, "diagsvault")
+                        Method (_DSM, 4, NotSerialized)
+                        {
+                            If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                            Return (Package() { "address", 0x57 })
+                        }
+                    }
+                }
             }
 
             Device (EHC1)
@@ -5939,6 +5954,21 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                         }
                     }
                 }
+                Method (_DSM, 4, NotSerialized)
+                {
+                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    Return (Package()
+                    {
+                        "built-in", Buffer() { 0x00 },
+                        "AAPL,clock-id", Buffer() { 0x01 },
+                        "device_type", Buffer() { "EHCI" },
+                        "AAPL,current-available", 2100,
+                        "AAPL,current-extra", 2200,
+                        "AAPL,current-extra-in-sleep", 1600,
+                        "AAPL,device-internal", 0x02,
+                        "AAPL,max-port-current-in-sleep", 2100,
+                    })
+                }
             }
 
             Device (EHC2)
@@ -6319,6 +6349,21 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                             }
                         }
                     }
+                }
+                Method (_DSM, 4, NotSerialized)
+                {
+                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
+                    Return (Package()
+                    {
+                        "built-in", Buffer() { 0x00 },
+                        "AAPL,clock-id", Buffer() { 0x01 },
+                        "device_type", Buffer() { "EHCI" },
+                        "AAPL,current-available", 2100,
+                        "AAPL,current-extra", 2200,
+                        "AAPL,current-extra-in-sleep", 1600,
+                        "AAPL,device-internal", 0x02,
+                        "AAPL,max-port-current-in-sleep", 2100,
+                    })
                 }
             }
 
@@ -7117,7 +7162,8 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
 
     Method (_WAK, 1, Serialized)  // _WAK: Wake
     {
-        P8XH (0x00, 0xAB)
+        If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
+P8XH (0x00, 0xAB)
         If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)))
         {
             If (LEqual (ECON, 0x01))
