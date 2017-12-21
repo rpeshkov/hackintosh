@@ -4131,13 +4131,13 @@ DefinitionBlock ("", "DSDT", 1, "SECCSD", "LH43STAR", 0x00000000)
                                     Store (0x0F, Local0)
                                 }
                             }
-                            ElseIf (LEqual (\_SB.PCI0.LPCB.H_EC.B1EX, 0x01))
-                            {
-                                Store (0x1F, Local0)
-                            }
+                            //ElseIf (LEqual (\_SB.PCI0.LPCB.H_EC.B1EX, 0x01))
+                            //{
+                            //    Store (0x1F, Local0)
+                            //}
                             Else
                             {
-                                Store (0x0F, Local0)
+                                Store (0x1F, Local0)
                             }
 
                             Return (Local0)
