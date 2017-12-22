@@ -92,6 +92,8 @@
 	<dict>
 		<key>Audio</key>
 		<dict>
+			<key>Inject</key>
+			<integer>2</integer>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
@@ -170,34 +172,6 @@
 		<false/>
 		<key>KextsToPatch</key>
 		<array>
-			<dict>
-				<key>Comment</key>
-				<string>t2-10.10-10.11-SNB-Port _0x5-DP2HDMI</string>
-				<key>Find</key>
-				<data>
-				AgUAAAAEAAAHAAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelSNBGraphicsFB</string>
-				<key>Replace</key>
-				<data>
-				AgUAAAAIAAAGAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>t2-10.10-10.11-SNB-Port _0x7-HDMI2DP</string>
-				<key>Find</key>
-				<data>
-				BAYAAAAIAAAGAAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelSNBGraphicsFB</string>
-				<key>Replace</key>
-				<data>
-				BAYAAAAEAAAJAAAA
-				</data>
-			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
