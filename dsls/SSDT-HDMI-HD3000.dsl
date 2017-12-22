@@ -21,7 +21,7 @@
 DefinitionBlock ("", "SSDT", 1, "toleda", "ami6hdm3", 0x00003000)
 {
     External (_SB_.PCI0, DeviceObj)    // Warning: Unknown object
-    External (_SB_.PCI0.GFX0._ADR, UnknownObj)    // Warning: Unknown object
+    External (_SB_.PCI0.IGPU._ADR, UnknownObj)    // Warning: Unknown object
 
     Method (XOSI, 1, NotSerialized)
     {
@@ -30,13 +30,13 @@ DefinitionBlock ("", "SSDT", 1, "toleda", "ami6hdm3", 0x00003000)
 
     Scope (\_SB.PCI0)
     {
-        Name (GFX0._STA, Zero)  // _STA: Status
+        Name (IGPU._STA, Zero)  // _STA: Status
         Device (IGPU)
         {
             Name (_ADR, 0x00020000)  // _ADR: Address
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
-                Store (Zero, \_SB.PCI0.GFX0._ADR)
+                Store (Zero, \_SB.PCI0.IGPU._ADR)
             }
 
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
