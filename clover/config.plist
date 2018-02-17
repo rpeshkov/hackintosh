@@ -65,7 +65,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v kext-dev-mode=1 slide=0</string>
+		<string>-v kext-dev-mode=1 slide=0 keepsyms=1</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
